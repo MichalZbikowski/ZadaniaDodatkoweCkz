@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Ryzen\\source\\repos\\WPF zadania\\zad10\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EA78F2A6-6A44-4680-A9C5-C46BD16B459E}|zad10\\zad10.csproj|c:\\users\\ryzen\\source\\repos\\wpf zadania\\zad10\\zad10\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EA78F2A6-6A44-4680-A9C5-C46BD16B459E}|zad10\\zad10.csproj|solutionrelative:zad10\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA78F2A6-6A44-4680-A9C5-C46BD16B459E}|zad10\\zad10.csproj|c:\\users\\ryzen\\source\\repos\\wpf zadania\\zad10\\zad10\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA78F2A6-6A44-4680-A9C5-C46BD16B459E}|zad10\\zad10.csproj|solutionrelative:zad10\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Ryzen\\source\\repos\\WPF zadania\\zad10\\zad10\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "zad10\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\Ryzen\\source\\repos\\WPF zadania\\zad10\\zad10\\MainWindow.xaml*",
+              "RelativeToolTip": "zad10\\MainWindow.xaml*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-25T18:38:17.224Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Ryzen\\source\\repos\\WPF zadania\\zad10\\zad10\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "zad10\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Ryzen\\source\\repos\\WPF zadania\\zad10\\zad10\\MainWindow.xaml.cs",
+              "RelativeToolTip": "zad10\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAmwBkAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T18:38:16.89Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

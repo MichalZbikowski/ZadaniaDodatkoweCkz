@@ -1,0 +1,604 @@
+//zad 1
+
+public class Main {
+
+//    Napisz klasę Lista, której zadaniem będzie przechowywać 
+//    listę liczb całkowitych. Klasa ta mieć następujące pola
+//    prywatne:
+    
+//    int[] liczby; // tablica, w której przechowywane będą liczby
+//    int pojemnosc; // maksymalna liczba elementów, możliwych do przechowywania
+//    int rozmiar: // liczba przechowywanych elementów (liczb w tablicy, liczby")
+    
+//    Klasa Lista powinna mieć również następujące metody:
+    
+//    konstruktor z parametrem określającym pojemność, który przydziela pamięć dla tablicy liczby oraz ustala wartości
+//    pozostałych pól klasy:
+    
+//    ⚫ metodę dodajElement, która przyjmuje dokładnie jeden element - liczbę całkowitą, która dodawana jest do listy, w przypadku, gdy lista jest pełna powinien zostać wyświetlony komunikat o błędzie;
+//    metodę znajdź, której jedynym parametrem powinna być szukana liczba, natomiast wynikiem pozycja podanej liczby w liście (licząc od 0) lub -1, gdy liczby nie ma na liście;
+//    
+//    bezparametrową metodę pisz, która wypisuje informacje o liście, w tym jej rozmiar, pojemność oraz listę przechowywanych elementów;
+//    metode usun Pierwszy, która usuwa pierwsze wystąpienie podanej jako parametr liczby, jeżeli znajduje się ona na liście, tzn. jeżeli podana liczba występuje więcej niż jeden raz, to usuwane jest jedynie pierwsze jej wystąpienie;
+//    
+//    ⚫ metodę usun Powtorzenia, która usuwa wszystkie powtórzenia elementów na liście, tzn. po jej wykonaniu na liście
+//    nie powinno być żadnych powtórzonych liczb;
+//    
+//    • metodę zapiszDoPliku, która zapisuje zawartość listy do pliku obiektowego, którego nazwa podana powinna być jako pierwszy parametr;
+
+
+    public static void main(String[] args) {
+        Lista lista = new Lista(5);
+        lista.dodajElement();
+        lista.dodajElement();
+        lista.dodajElement();
+        lista.dodajElement();
+
+        System.out.println(lista.znajdz(2));
+
+        lista.pisz();
+
+        lista.usunPierwszy(2);
+        lista.pisz();
+        lista.zapiszDoPliku();
+    }
+}
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+    public class Lista {
+        Scanner scan = new Scanner(System.in);
+        private int pojemnosc; //maksymalna ilosc elementow w tablicy
+        private int[] liczby;
+
+        private int rozmiar=0; //ilosc elementow w tablicy
+
+
+        public Lista(int pojemnosc){
+        this.pojemnosc=pojemnosc;
+        liczby=new int[pojemnosc];
+        }
+    int i = 0;
+    public void dodajElement(){
+        if (rozmiar<=pojemnosc){
+            System.out.print("Dodaj element: ");
+            int element = scan.nextInt();
+            liczby[i] = element;
+            i++;
+            rozmiar++;
+        }else {
+            System.out.println("Lista jest juz pelna");
+        }
+    }
+    public int znajdz(int x){
+        for(int i=0; i<pojemnosc;i++){
+            if(x==liczby[i]){
+                return i;
+            }
+        }
+        return -1;
+    }
+    public void pisz(){
+        System.out.println("rozmiar: "+rozmiar+" pojemnosc: "+pojemnosc);
+        System.out.println("elementy: ");
+        System.out.print("[");
+        for (int i = 0; i<pojemnosc;i++){
+            if(i!= pojemnosc-1){
+                System.out.print(liczby[i]+",");
+            }else{
+                System.out.print(liczby[i]);
+            }
+        }
+        System.out.print("]\n");
+    }
+
+    public void usunPierwszy(int x){
+        int y=znajdz(x);
+        if(y!=-1){
+            for (int i=y; i< pojemnosc;i++){
+                if (liczby[y]==liczby[i]){
+                    int tymczas=liczby[y];
+                    liczby[y]=0;
+                    if (liczby[znajdz(x)]==liczby[i]){
+                        rozmiar--;
+                        i= pojemnosc;
+                    }else{
+                        liczby[y]=tymczas;
+                    }
+                }
+            }
+        }
+    }
+
+    public void usunPowtorzenia(){
+        for (int i=0;i< pojemnosc;i++){
+            usunPierwszy(liczby[i]);
+        }
+    }
+
+    public void zapiszDoPliku(){
+        String zapis="";
+        for (int i=0;i< pojemnosc;i++){
+            zapis+=liczby[i];
+        }
+        try (FileWriter fileWriter = new FileWriter(liczby[0]+".txt")) {
+            fileWriter.write(zapis);
+            System.out.println("zapisano dane.");
+        } catch (IOException e) {
+            System.out.println("błąd.");
+            e.printStackTrace();
+        }
+    }
+}
+
+//zad2-zad7 (to obszerne zadanie z klasą car)
+
+//1. Utwórz klasę Car zawierającą 3 publiczne (niestatyczne) pola typu String:
+//        a make (marka)
+//        b. plate (rejestracja)
+//        c color (kolor)
+//
+//2. Dodaj w klasie publiczny 3-argumentowy konstruktor, który zainicjalizuje nowo tworzony obiekt wartościami przekazanymi jako argumenty wywołania konstruktora.
+//        3. W metodzie main() utwórz obiekt klasy Car, a następnie wypisz na konsoli zawartość jego pól.
+//
+//Zadanie 2
+//        1. Dodaj w klasie Car publiczną metodę info(), która będzie zwracać tekstową reprezentację obiektu w formacie: „Make: Fiat Plate: PO12345 Color: Blue"
+//        2. Zmień pola w klasie na prywatne. Sprawdź czy program nadal się kompiluje.
+//        3. Zmień sposób wyświetlania zawartości obiektu w metodzie main(), wykorzystując metodę info() obiektu Car.
+//
+// Zadanie 3
+//        1 Zdefiniuj enumerację Color (w odrębnym pliku, ale w tym samym pakiecie). Pierwszą wartością enumeracji powinno być Unknown, kolejne np. White, Black, Green, itd. (wymień ok. 5 barw).
+//        2. Wykorzystaj enumerację Color jako typ pola color w klasie Car. Zmodyfikuj konstruktor i ewentualnie (może to nie być konieczne) metodę info().
+//        3. Zmodyfikuj w metodzie main() operację tworzenia obiektu. jako kolor tworzonego samochodu podaj jedną z wartości przewidzianych w enumeracji.
+//
+//Zadanie 4
+//        1.Zdefiniuj w klasie Car właściwości (gettery/setery) dla wszystkich trzech cech samochodu. Możesz zdefiniować
+//        te metody ręcznie lub wykorzystać do tego celu kreator w środowisku IDE.
+//        2. Spraw aby właściwość marki samochodu była tylko do odczytu. Przetestuj możliwość modyfikacji poszczególnych właściwości obiektu klasy Car po jego utworzeniu.
+//
+//Zadanie 5
+//        1.Dodaj w klasie Car publiczny 2-argumentowy konstruktor, który jako argumenty otrzymuje markę i rejestrację,
+//        a kolor ustawia na nieznany (Unknown). Nowy konstruktor powinien wywoływać istniejący konstruktor za pomocą
+//        mechanizmu constructor chaining". 2. W metodzie main() utwórz kolejny obiekt klasy Car nowym konstruktorem, a następnie wypisz na konsoli informacje o nim.
+//
+// Zadanie 6
+//        Zaimplementuj w klasie Car mechanizm licznika istniejących instancji samochodów.
+//        Mechanizm powinien obejmować:
+//        a. Publiczne statyczne pole w klasie z wartością licznika (np. counter)
+//        b. Zwiększanie licznika przy tworzeniu obiektu każdym z konstruktorów
+//        c. Zmniejszanie licznika w metodzie finalize()
+
+//        Uwaga: Metoda finalize() w rzeczywistych aplikacjach nie powinna być używana i jest obecnie zdeprecjonowana. Jej planowanym zastosowaniem było zwalnianie zasobów przetrzymywanych przez obiekty niszczone przez Garbage Collector. Jest to zła praktyka, prowadząca do niepotrzebnego blokowania zasobów, ze względu na nieprzewidywalny moment
+//        działania Garbage Collectora 2. W metodzie main() po tworzeniu każdego z obiektów wypisz na konsoli aktualny stan licznika.
+//
+//        3. Na końcu metody main() ustaw na null wszystkie zmienne referencyjne do istniejących instancji samochodów.
+//        4. Wypisz aktualny stan licznika po każdym przypisaniu nuli do referencji aby sprawdzić Garbage Collector na bieżąco sprząta niedostępne już obiekty.
+
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
+public class Main {
+    public static void main(String[] args) throws Throwable {
+        System.out.println(Car.licznik);
+        Car car1 = new Car("Fiat", "SPS2140", Color.Nardo_Grey);
+        System.out.println(car1.info());
+        System.out.println("Liczba samochodów: "+Car.licznik);
+
+        Car car2 = new Car("BMW", "SWD9214");
+        System.out.println(car2.info());
+        System.out.println("Liczba samochodów: "+Car.licznik);
+
+        car1.finalize();
+        System.gc();
+
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+
+        System.out.println("Liczba samochodów: "+Car.licznik);
+        car2.finalize();
+        System.out.println("Liczba samochodów: "+Car.licznik);
+    }
+}
+
+public class Car {
+    public String make;
+    public String plate;
+    public Color color;
+    public static int licznik=0;
+
+    public Car(String make, String plate, Color color){
+        this.make=make;
+        this.plate=plate;
+        this.color=color;
+        licznik++;
+    }
+    public Car (String make, String plate){
+        this(make,plate,Color.Unknown);
+    }
+
+    public String info(){
+        return "Make: "+make+", Plate: "+plate+", Color: "+color;
+    }
+
+    public String getMake() {
+        return make;
+    }
+
+    private void setMake(String make) {
+        this.make = make;
+    }
+
+    public String getPlate() {
+        return plate;
+    }
+
+    public void setPlate(String plate) {
+        this.plate = plate;
+    }
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
+    public static int getCounter() {
+        return licznik;
+    }
+
+    @Override
+    protected void finalize() throws Throwable {
+        try {
+            licznik--; // intelj podkresla finalize, ale nie daltego ze nie działa, tylko dlatego ze nie powinno sie korzystac z finalize
+        } finally {
+            super.finalize();
+        }
+    }
+}
+
+public enum Color {
+    Unknown, White, Nardo_Grey, Gold, Blue, Red
+}
+
+//zad 8
+//napisz program wyswietlajacy tabliczke mnozenia 10 na 10
+
+public class Main {
+    public static void main(String[] args) {
+
+        for (int i = 1; i <=10; i++) {
+            for (int j = 1; j <=10; j++) {
+                System.out.print(j*i+" ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+//zad9
+
+//napisz progarm wypisujący wyniki rzutu monetą 50 razy
+
+import java.util.Random;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Random rnd = new Random();
+        int orzel = 0, reszka = 0;
+        for (int i = 0; i < 50; i++) {
+            if(rnd.nextBoolean()){
+                reszka++;
+            }else{
+                orzel++;
+            }
+        }
+        System.out.println("liczba reszek= "+ reszka +", Liczba orzełków: "+orzel);
+    }
+}
+
+//zad10
+
+//Przeanalizuj i przetestuj podany kod.
+
+
+public class Main
+{
+    public static void main (String[] args) {
+        Telefon telAla = new Telefon ("783982331");
+        Telefon telOla = new Telefon ("608234982");
+        telAla.zadzwon ("0124239832");
+        telOla.zadzwon ("112");
+        double kwota = telAla.obliczKwoteDoZaplaty();
+        System.out.println ("Ala ma do zapłaty: " + kwota + " zl.");
+
+        Telefon[] tablicaTelefonow = new Telefon[3];
+
+        tablicaTelefonow[0]=new Telefon("123456789");
+        tablicaTelefonow[1]=new TelefonKomorkowy("123456788", "Tmobile");
+        tablicaTelefonow[2]=new TelefonStacjonarny("123456787", "058");
+
+        tablicaTelefonow[1].zadzwon("122");
+        kwota = tablicaTelefonow[1].obliczKwoteDoZaplaty();
+        ((TelefonKomorkowy)tablicaTelefonow[1]).wyslijSMS("help potrzebuje pomocy ratowniku", "112");
+
+        System.out.println ("do zapłaty: " + kwota + " zl.");
+
+        tablicaTelefonow[2].zadzwon("122");
+        kwota = tablicaTelefonow[2].obliczKwoteDoZaplaty();
+
+        System.out.println ("do zapłaty: " + kwota + " zl.");
+
+        tablicaTelefonow[0].zadzwon("122");
+        kwota = tablicaTelefonow[0].obliczKwoteDoZaplaty();
+
+        System.out.println ("do zapłaty: " + kwota + " zl.");
+    }
+
+}
+
+
+public class Telefon {
+    private String nrTel;
+    private int lacznyCzas;
+    private static double cenaRozmowy = 0.48;
+
+    Telefon (String numer) {
+        nrTel = numer;
+    }
+
+    Telefon () {
+    }
+
+    double obliczKwoteDoZaplaty () {
+        return cenaRozmowy*(lacznyCzas/60);
+    }
+
+    static void ustawCeneRozmowy (double nowaCena) {
+        cenaRozmowy = nowaCena;
+    }
+
+    void zadzwon (String nr) {
+        System.out.println("Dzwonie do:" + nr);
+        System.out.println("Rozmowa w toku...");
+        int czasRozmowy = (int) (Math.random()*3600);
+        lacznyCzas = lacznyCzas + czasRozmowy;
+        System.out.println("Rozmowa zakonczona.");
+        System.out.print("Czas rozmowy:"+ czasRozmowy/60 + "min," + czasRozmowy%60 + "sek.");
+        }
+
+}
+
+
+//Zadanie do powyższego kodu:
+//Z klasy Telefon wyprowadź dwie klasy pochodne: TelefonKomorkowy i TelefonStacjonarny. Każda z tych klas powinna posiadać
+//
+//nowe pola (np. operator, prefiks),
+//nowe metody (np. wyślijSMS),
+//własną implementację metody zadzwon(String) (przesłanianie).
+//
+//Utwórz tablicę typu Telefon, np:
+//Telefon [] tablica Telefonow = new Telefon [3];
+//tablica Telefonow [0] = new Telefon ("634295432");
+//tablica Telefonow [1] = new TelefonKomorkowy ("504295432", "T-mobile");
+//tablica Telefonow [2] = new TelefonStacjonarny ("126493042", "058");
+//
+//Poszczególne elementy tablicy zawierają referencje zarówno do obiektów klasy Telefon, jak również do obiektów klas pochodnych. Dla każdego elementu tablicy wywołaj metodę zadzwon.
+
+
+
+
+public class TelefonStacjonarny extends Telefon{
+    private String prefix;
+    private String nrTel;
+    private int lacznyCzas;
+
+
+    TelefonStacjonarny (String numer, String prefix) {
+        nrTel = numer;
+        this.prefix = prefix;
+    }
+
+    void zadzwon (String nr) {
+        System.out.println("Dzwonie za pomoca tel stacjonarnego do:" + nr);
+        System.out.println("Rozmowa w toku...");
+        int czasRozmowy = (int) (Math.random()*3600);
+        lacznyCzas = lacznyCzas + czasRozmowy;
+        System.out.println("Rozmowa zakonczona.");
+        System.out.print("Czas rozmowy:"+ czasRozmowy/60 + "min," + czasRozmowy%60 + "sek.");
+    }
+
+
+
+}
+
+public class TelefonKomorkowy extends Telefon{
+    private String operator;
+    private String nrTel;
+    private int lacznyCzas;
+    private static double cenaZaZnak = 0.02;
+
+    //Nie za bardzo rozumiem dlaczego osobno implementować metode zadzwon dla klas pochodnych,
+    //skoro dzieczą one tę metodę po klasie telefon
+
+
+    TelefonKomorkowy(String numer, String operator) {
+        nrTel = numer;
+        this.operator = operator;
+    }
+
+    void zadzwon (String nr) {
+        System.out.println("Dzwonie za pomoca tel komorkowego do:" + nr);
+        System.out.println("Rozmowa w toku...");
+        int czasRozmowy = (int) (Math.random()*3600);
+        lacznyCzas = lacznyCzas + czasRozmowy;
+        System.out.println("Rozmowa zakonczona.");
+        System.out.print("Czas rozmowy:"+ czasRozmowy/60 + "min," + czasRozmowy%60 + "sek.");
+    }
+
+    public void wyslijSMS(String wiadomosc, String nrTel){
+        System.out.println("wysłano wiadomosc:" + wiadomosc+", do numeru: "+nrTel);
+        System.out.println("koszt sms: " + (wiadomosc.length()*cenaZaZnak)+"zł");
+    }
+
+
+}
+
+
+//zad 11
+
+public class Main {
+
+//napisz klase Macierz i zaimplementuj na jej rzecz przeciażenie operatorów tak aby  realizował:
+    // -dodawnanie macierzy,
+    // -odejmowanie macierzy,
+    // -mnozenie przez skalar
+
+    public static void main(String[] args) {
+        double[][] dataA = {
+                {1, 2, 3},
+                {1, 2, 3},
+                {4, 5, 6}
+        };
+
+        double[][] dataB = {
+                {7, 8, 9},
+                {7, 122, 9},
+                {10, 11, 12}
+        };
+
+        Macierz macierz1 = new Macierz(dataA);
+        Macierz macierz2 = new Macierz(dataB);
+
+        System.out.println("Macierz 1:");
+        System.out.println(macierz1);
+
+        System.out.println("Macierz 2:");
+        System.out.println(macierz2);
+
+        Macierz suma = macierz1.add(macierz2);
+        System.out.println("macierz1 + macierz2:");
+        System.out.println(suma);
+
+        Macierz roznica = macierz1.subtract(macierz2);
+        System.out.println("macierz1 - macierz2:");
+        System.out.println(roznica);
+
+        Macierz skalar = macierz1.multiplyByScalar(2);
+        System.out.println("macierz1 x 2:");
+        System.out.println(skalar);
+    }
+}
+
+import java.util.Arrays;
+
+public class Macierz {
+    private double[][] data;
+    private int rows;
+    private int cols;
+
+    // Konstruktor
+    public Macierz(int rows, int cols) {
+        this.rows = rows;
+        this.cols = cols;
+        this.data = new double[rows][cols];
+    }
+
+    // Konstruktor przyjmujący tablicę 2D
+    public Macierz(double[][] data) {
+        this.rows = data.length;
+        this.cols = data[0].length;
+        this.data = new double[rows][cols];
+
+        for (int i = 0; i < rows; i++) {
+            if (data[i].length != cols) {
+                throw new IllegalArgumentException("Wszystkie wiersze muszą mieć tę samą liczbę kolumn");
+            }
+        }
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                this.data[i][j] = data[i][j];
+            }
+        }
+    }
+
+    public Macierz add(Macierz other) {
+        if (this.rows != other.rows || this.cols != other.cols) {
+            throw new IllegalArgumentException("Macierze muszą mieć ten sam rozmiar!");
+        }
+
+        Macierz result = new Macierz(rows, cols);
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                result.data[i][j] = this.data[i][j] + other.data[i][j];
+            }
+        }
+        return result;
+    }
+
+
+    public Macierz subtract(Macierz other) {
+        if (this.rows != other.rows || this.cols != other.cols) {
+            throw new IllegalArgumentException("Macierze muszą mieć ten sam rozmiar!");
+        }
+
+        Macierz result = new Macierz(rows, cols);
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                result.data[i][j] = this.data[i][j] - other.data[i][j];
+            }
+        }
+        return result;
+    }
+
+    public Macierz multiplyByScalar(double scalar) {
+        Macierz result = new Macierz(rows, cols);
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                result.data[i][j] = this.data[i][j] * scalar;
+            }
+        }
+        return result;
+    }
+
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        for (double[] row : data) {
+            builder.append(Arrays.toString(row)).append("\n");
+        }
+        return builder.toString();
+    }
+
+}
+
+
+//zad12
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+
+//obsługa czasu w java
+
+public class Main {
+    public static void main(String[] args) {
+        LocalDate data = LocalDate.now();
+        System.out.println(data);
+        LocalTime czas = LocalTime.now();
+        DateTimeFormatter forma = DateTimeFormatter.ofPattern("HH:mm");
+        String Czas = czas.format(forma);
+        System.out.println(Czas);
+    }
+}
+
+
+

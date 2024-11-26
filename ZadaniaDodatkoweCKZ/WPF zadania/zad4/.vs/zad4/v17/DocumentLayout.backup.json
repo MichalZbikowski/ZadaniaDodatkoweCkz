@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Ryzen\\source\\repos\\WPF zadania\\zad4\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B180282C-9B21-43EF-A78A-E6F2D54114E5}|zad4\\zad4.csproj|c:\\users\\ryzen\\source\\repos\\wpf zadania\\zad4\\zad4\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B180282C-9B21-43EF-A78A-E6F2D54114E5}|zad4\\zad4.csproj|solutionrelative:zad4\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B180282C-9B21-43EF-A78A-E6F2D54114E5}|zad4\\zad4.csproj|c:\\users\\ryzen\\source\\repos\\wpf zadania\\zad4\\zad4\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B180282C-9B21-43EF-A78A-E6F2D54114E5}|zad4\\zad4.csproj|solutionrelative:zad4\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B180282C-9B21-43EF-A78A-E6F2D54114E5}|zad4\\zad4.csproj|c:\\users\\ryzen\\source\\repos\\wpf zadania\\zad4\\zad4\\zapis.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B180282C-9B21-43EF-A78A-E6F2D54114E5}|zad4\\zad4.csproj|solutionrelative:zad4\\zapis.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "zapis.txt",
+              "DocumentMoniker": "C:\\Users\\Ryzen\\source\\repos\\WPF zadania\\zad4\\zad4\\zapis.txt",
+              "RelativeDocumentMoniker": "zad4\\zapis.txt",
+              "ToolTip": "C:\\Users\\Ryzen\\source\\repos\\WPF zadania\\zad4\\zad4\\zapis.txt",
+              "RelativeToolTip": "zad4\\zapis.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-11-24T22:29:53.223Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Ryzen\\source\\repos\\WPF zadania\\zad4\\zad4\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "zad4\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\Ryzen\\source\\repos\\WPF zadania\\zad4\\zad4\\MainWindow.xaml",
+              "RelativeToolTip": "zad4\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-24T22:11:00.036Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Ryzen\\source\\repos\\WPF zadania\\zad4\\zad4\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "zad4\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Ryzen\\source\\repos\\WPF zadania\\zad4\\zad4\\MainWindow.xaml.cs*",
+              "RelativeToolTip": "zad4\\MainWindow.xaml.cs*",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAowDwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-24T22:10:59.97Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

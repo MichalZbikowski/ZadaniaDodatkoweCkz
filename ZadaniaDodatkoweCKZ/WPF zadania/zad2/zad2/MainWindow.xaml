@@ -1,0 +1,29 @@
+﻿<Window x:Class="zad2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:zad2"
+        mc:Ignorable="d"
+       Title="Przykładowy Checkbox" Height="400" Width="600">
+  <!-- Napisz okno aplikacji które:
+    - ma rozmiar 400x600px
+    -ma tytuł "Przykładowy checkbox"
+    Wybór z checkboxa: HTML, python, c++, java-->
+    <Grid>
+        <StackPanel>
+        <CheckBox Grid.Row="0">
+            <TextBlock>HTML</TextBlock>
+        </CheckBox>
+        <CheckBox Grid.Row="1">
+            <TextBlock>Python</TextBlock>
+        </CheckBox>
+        <CheckBox Grid.Row="2">
+            <TextBlock>C++</TextBlock>
+        </CheckBox>
+        <CheckBox Grid.Row="3">
+            <TextBlock>Java</TextBlock>
+        </CheckBox>
+        </StackPanel>
+    </Grid>
+</Window>

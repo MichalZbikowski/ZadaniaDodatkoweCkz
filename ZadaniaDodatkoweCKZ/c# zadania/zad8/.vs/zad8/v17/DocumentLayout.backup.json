@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Ryzen\\source\\repos\\c# zadania\\zad8\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{93E3862F-01B2-459D-96B7-94EE6AB607A0}|zad8\\zad8.csproj|c:\\users\\ryzen\\source\\repos\\c# zadania\\zad8\\zad8\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93E3862F-01B2-459D-96B7-94EE6AB607A0}|zad8\\zad8.csproj|solutionrelative:zad8\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Ryzen\\source\\repos\\c# zadania\\zad8\\zad8\\Program.cs",
+              "RelativeDocumentMoniker": "zad8\\Program.cs",
+              "ToolTip": "C:\\Users\\Ryzen\\source\\repos\\c# zadania\\zad8\\zad8\\Program.cs",
+              "RelativeToolTip": "zad8\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-24T17:47:30.303Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

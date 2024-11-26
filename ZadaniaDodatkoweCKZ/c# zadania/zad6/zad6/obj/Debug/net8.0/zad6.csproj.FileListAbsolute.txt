@@ -1,0 +1,14 @@
+C:\Users\Ryzen\source\repos\c# zadania\zad6\zad6\bin\Debug\net8.0\zad6.exe
+C:\Users\Ryzen\source\repos\c# zadania\zad6\zad6\bin\Debug\net8.0\zad6.deps.json
+C:\Users\Ryzen\source\repos\c# zadania\zad6\zad6\bin\Debug\net8.0\zad6.runtimeconfig.json
+C:\Users\Ryzen\source\repos\c# zadania\zad6\zad6\bin\Debug\net8.0\zad6.dll
+C:\Users\Ryzen\source\repos\c# zadania\zad6\zad6\bin\Debug\net8.0\zad6.pdb
+C:\Users\Ryzen\source\repos\c# zadania\zad6\zad6\obj\Debug\net8.0\zad6.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ryzen\source\repos\c# zadania\zad6\zad6\obj\Debug\net8.0\zad6.AssemblyInfoInputs.cache
+C:\Users\Ryzen\source\repos\c# zadania\zad6\zad6\obj\Debug\net8.0\zad6.AssemblyInfo.cs
+C:\Users\Ryzen\source\repos\c# zadania\zad6\zad6\obj\Debug\net8.0\zad6.csproj.CoreCompileInputs.cache
+C:\Users\Ryzen\source\repos\c# zadania\zad6\zad6\obj\Debug\net8.0\zad6.dll
+C:\Users\Ryzen\source\repos\c# zadania\zad6\zad6\obj\Debug\net8.0\refint\zad6.dll
+C:\Users\Ryzen\source\repos\c# zadania\zad6\zad6\obj\Debug\net8.0\zad6.pdb
+C:\Users\Ryzen\source\repos\c# zadania\zad6\zad6\obj\Debug\net8.0\zad6.genruntimeconfig.cache
+C:\Users\Ryzen\source\repos\c# zadania\zad6\zad6\obj\Debug\net8.0\ref\zad6.dll

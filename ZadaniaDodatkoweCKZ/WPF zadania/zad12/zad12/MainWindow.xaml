@@ -1,0 +1,33 @@
+﻿<Window x:Class="zad12.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:zad12"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="135" Width="280">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock>Podaj wynik ze sprawdzianu nr1:</TextBlock>
+                <TextBox x:Name="sprawdzian1TextBox" Width="70" HorizontalAlignment="Left"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock>Podaj wynik ze sprawdzianu nr2:</TextBlock>
+                <TextBox x:Name="sprawdzian2TextBox" Width="70" HorizontalAlignment="Left"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock>Podaj wynik ze sprawdzianu nr3:</TextBlock>
+                <TextBox x:Name="sprawdzian3TextBox" Width="70" HorizontalAlignment="Left"/>
+            </StackPanel>
+            <TextBlock x:Name="output"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="Średnia" Click="click" Width="60"/>
+                <Button Content="Zakończ" Click="end" Width="50"/>
+            </StackPanel>
+
+        </StackPanel>
+
+    </Grid>
+</Window>
